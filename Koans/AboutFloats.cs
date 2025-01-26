@@ -11,7 +11,7 @@ public class AboutFloats : Koan
 	{
 		var f = 1f;
 
-		Assert.Equal(typeof(FillMeIn), f.GetType());
+		Assert.Equal(typeof(float), f.GetType());
 	}
 
 	[Step(2)]
@@ -19,7 +19,7 @@ public class AboutFloats : Koan
 	{
 		float f = 1.5f;
 
-		Assert.Equal(f, FILL_ME_IN);
+		Assert.Equal(f, 1.5);
 
 		//Floating Point numbers are able to keep data beyond the decimal point
 		//unlike Integers which are whole numbers.
@@ -30,7 +30,7 @@ public class AboutFloats : Koan
 	[Step(3)]
 	public void FloatsAreSingles()
 	{
-		Assert.Equal(typeof(float), typeof(FillMeIn));
+		Assert.Equal(typeof(float), typeof(System.Single));
 
 		//.NET doesn't have a type called `float`
 		//Instead, it has a "Single Precision Floating Point Number" type:
@@ -45,7 +45,7 @@ public class AboutFloats : Koan
 		var result = 1 * 2f; //One's an integer, one's a float (even though it's a whole number)!
 
 		//what will the result type be?
-		Assert.Equal(typeof(FillMeIn), result.GetType());
+		Assert.Equal(typeof(float), result.GetType());
 
 		//.NET kindly stores the result of the math in a float
 		//so you don't lose the extra information in your floating point value
