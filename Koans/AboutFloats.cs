@@ -54,8 +54,8 @@ public class AboutFloats : Koan
 	[Step(5)]
 	public void FloatsHaveLimitedMaximumAndMinimumValues()
 	{
-		Assert.Equal(FILL_ME_IN, 3.40282347E+38f);
-		Assert.Equal(FILL_ME_IN, -3.40282347E+38f);
+		Assert.Equal(float.MaxValue, 3.40282347E+38f);
+		Assert.Equal(float.MinValue, -3.40282347E+38f);
 	}
 
 	[Step(6)]
@@ -63,7 +63,7 @@ public class AboutFloats : Koan
 	{
 		// If you try to store a number larger than the maximum number a float can store, it will become Infinity or -Infinity
 		var largerThanMaximumFloatValue = float.Parse("3.5E+38",CultureInfo.InvariantCulture);
-		Assert.True(FILL_ME_IN);
+		Assert.True(float.IsPositiveInfinity(largerThanMaximumFloatValue));
 	}
 
 	[Step(7)]
@@ -72,8 +72,8 @@ public class AboutFloats : Koan
 		var sevenDigits = 0.9999999f;
 		var eightDigits = 0.99999999f;
 
-		Assert.Equal(sevenDigits, FILL_ME_IN);
-		Assert.Equal(eightDigits, FILL_ME_IN);
+		Assert.Equal(sevenDigits, 0.9999999f);
+		Assert.Equal(eightDigits, 1.0f);
 
 		//Remember how floats are "Single Precision"?
 		//What does that actually mean?
@@ -98,7 +98,7 @@ public class AboutFloats : Koan
 	{
 		var f = 0.3f + 0.6f;
 
-		Assert.True(f == 0.9f);
+		Assert.True(f != 0.9f);
 
 		//Math with floating point numbers doesn't always behave how humans expect.
 		//This is because floating point numbers are stored in binary,
